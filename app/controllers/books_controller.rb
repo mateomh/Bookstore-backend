@@ -5,6 +5,11 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    respond_to do |format|
+        format.html
+        format.json { render :json => @books }
+    end
+    # render :json => Book.all
   end
 
   # GET /books/1
